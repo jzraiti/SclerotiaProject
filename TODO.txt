@@ -1,3 +1,5 @@
 Set up custom domain
 Fix context page
 Add white paper
+
+fix domain name pathing issues
