@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Sclerotia Project</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/Components/randombackground.js"></script>
+    <!-- Random background script -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+  </head>
+
+  <body class="m-0 p-0 bg-cover bg-center bg-no-repeat">
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch("/Components/header.html")
+          .then((response) => response.text())
+          .then((data) => {
+            const headerPlaceholder =
+              document.getElementById("header-placeholder");
+            headerPlaceholder.innerHTML = data;
+
+            // Manually execute the JavaScript for the menu functionality
+            const openBtn = document.getElementById("openMenu");
+            const closeBtn = document.getElementById("closeMenu");
+            const panel = document.getElementById("menuPanel");
+
+            // Open/close main menu
+            openBtn.addEventListener("click", () => {
+              panel.classList.remove("hidden");
+            });
+
+            closeBtn.addEventListener("click", () => {
+              panel.classList.add("hidden");
+            });
+          })
+          .catch((error) => console.error("Error loading header:", error));
+      });
+    </script>
+
+    <!-- Main content -->
+    <div
+      class="max-w-2xl mx-auto p-8 shadow-lg rounded-lg mt-10 bg-white text-gray-900"
+    >
+      <h1 class="text-3xl font-bold mb-4">The Strategy</h1>
+
+      <p class="mb-4">
+        In 1790, Benjamin Franklin left 1,000 pounds in his will to be invested
+        for 100 years before dispersal. By the end of the century, the fund had
+        grown to over
+        <a
+          href="https://www.nytimes.com/1990/04/21/us/from-ben-franklin-a-gift-that-s-worth-two-fights.html"
+          class="text-blue-600 underline"
+          target="_blank"
+          >$2 million</a
+        >—a testament to the quiet power of compound interest and long-term
+        vision.
+      </p>
+
+      <p class="mb-4">
+        Today, mycology is in a precarious position. Despite its central role in
+        ecosystems, medicine, and sustainability, fungal science receives
+        limited attention and even less funding. Research is beholden to
+        institutions with short-term incentives. We believe the best way to
+        secure our scientific future is the fungal way: slow, deliberate, and
+        intergenerational.
+      </p>
+      <!--
+
+      <img
+        src="/Assets/Images/ergot.jpeg"
+        alt="Sclerotia"
+        class="w-full h-auto rounded-lg shadow-md mb-6"
+      />
+      -->
+
+      <p class="mb-4">
+        <strong>The Sclerotia Project</strong> emulates this approach. We aim to
+        gather a modest initial sum—$5,000—and invest it in a total stock market
+        index fund with a long-term average return of ~6.5% annually. Left
+        untouched for 100 years, that investment could grow to over
+        <strong>$2.7 million</strong>:
+      </p>
+
+      <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4 mb-4">
+        <p class="font-mono text-lg">
+          FV = $5,000 × (1 + 0.065)<sup>100</sup> ≈ $2,716,006
+        </p>
+        <p class="text-sm text-gray-600">
+          Source:
+          <a
+            href="https://www.investor.gov/financial-tools-calculators/calculators/compound-interest-calculator"
+            target="_blank"
+            class="underline text-blue-600"
+            >SEC Compound Interest Calculator</a
+          >
+        </p>
+      </div>
+      <img
+        src="/Assets/Images/compound_interest_chart.png"
+        alt="Compound Interest Chart"
+        class="w-full h-auto rounded-lg shadow-md mb-4"
+      />
+
+      <p class="mb-4">
+        This is not a traditional fundraiser. It is a grassroots, decentralized
+        endowment seeded by mycologists themselves. Future generations will
+        inherit the fund. 
+      </p>
+
+      <p class="mb-4">
+        By contributing a small amount today, we become ancestors of a fungal
+        legacy. Like sclerotia, we store energy for a time to come. The best
+        time to start this was 100 years ago. The second-best time is now.
+      </p>
+
+    </div>
+
+    <!-- Footer 
+    <div id="footer-placeholder"></div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch("/Components/footer.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("footer-placeholder").innerHTML = data;
+          })
+          .catch((error) => console.error("Error loading footer:", error));
+      });
+    </script>
+    -->
+  </body>
+</html>
