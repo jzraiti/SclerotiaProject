@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Sclerotia Project</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/Components/randombackground.js"></script>
+    <!-- Random background script -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+  </head>
+
+  <body class="m-0 p-0 bg-cover bg-center bg-no-repeat">
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch("/Components/header.html")
+          .then((response) => response.text())
+          .then((data) => {
+            const headerPlaceholder =
+              document.getElementById("header-placeholder");
+            headerPlaceholder.innerHTML = data;
+
+            // Manually execute the JavaScript for the menu functionality
+            const openBtn = document.getElementById("openMenu");
+            const closeBtn = document.getElementById("closeMenu");
+            const panel = document.getElementById("menuPanel");
+
+            // Open/close main menu
+            openBtn.addEventListener("click", () => {
+              panel.classList.remove("hidden");
+            });
+
+            closeBtn.addEventListener("click", () => {
+              panel.classList.add("hidden");
+            });
+          })
+          .catch((error) => console.error("Error loading header:", error));
+      });
+    </script>
+
+    <!-- Main content -->
+    <div
+      class="max-w-2xl bg-black bg-opacity-70 p-8 sm:p-12 text-center mx-auto mt-10 sm:mt-20 mb-10 sm:mb-20 text-white font-sans min-h-[800px]"
+    >
+      <h1 class="text-3xl font-bold mb-4">White Paper</h1>
+
+        <p class="mb-4">
+            This white paper outlines the vision and strategy of The Sclerotia Project,
+            a long-term initiative to support the future of mycological science through
+            patient, sustainable funding.
+        </p>
+
+        <div class="flex justify-center mb-6">
+            <iframe
+            src="https://docs.google.com/document/d/14HVDKA5wYGAHsXW-e74LhmDo70PxXy74IYWExSoglYU/preview"
+            width="600"
+            height="780"
+            class="rounded-lg shadow-lg bg-white"
+            style="border: none;"
+            allowfullscreen
+            ></iframe>
+        </div>
+
+    </div>
+
+    <!-- Footer 
+    <div id="footer-placeholder"></div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch("/Components/footer.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("footer-placeholder").innerHTML = data;
+          })
+          .catch((error) => console.error("Error loading footer:", error));
+      });
+    </script>
+    -->
+  </body>
+</html>

@@ -1,5 +1,3 @@
-Set up custom domain
-Fix context page
-Add white paper
+Add about us page
 
-fix domain name pathing issues
+Add MSA page after meeting
