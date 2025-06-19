@@ -34,7 +34,7 @@
             const openBtn = document.getElementById("openMenu");
             const closeBtn = document.getElementById("closeMenu");
             const panel = document.getElementById("menuPanel");
-            
+
             // Open/close main menu
             openBtn.addEventListener("click", () => {
               panel.classList.remove("hidden");
@@ -43,7 +43,6 @@
             closeBtn.addEventListener("click", () => {
               panel.classList.add("hidden");
             });
-
           })
           .catch((error) => console.error("Error loading header:", error));
       });
@@ -53,52 +52,17 @@
     <div
       class="max-w-2xl bg-black bg-opacity-70 p-8 sm:p-12 text-center mx-auto mt-10 sm:mt-20 mb-10 sm:mb-20 text-white font-sans min-h-[800px]"
     >
-      <img
-        src="/Assets/Images/Logos/Sclerotia_Logo.png"
-        alt="Sclerotia Project Logo"
-        class="w-60 h-60 object-contain mx-auto rounded-full border-4 border-white shadow-lg"
-      />
-      <div class="mt-8 space-y-6 text-left text-white text-md leading-relaxed">
-        <p>
-          <strong>The Sclerotia Project</strong> is a long-term initiative to
-          support the future of mycological science through patient,
-          intergenerational investment.
-        </p>
+      <h1 class="text-2xl sm:text-3xl font-bold mb-4">
+        Contact Us
+      </h1>
+      <p class="text-sm sm:text-base mb-6">
+        We are always open to feedback, suggestions, and inquiries. Whether you have questions about the Sclerotia Project, want to collaborate, or just want to say hello, feel free to reach out!
 
-        <p>
-          Inspired by Benjamin Franklin’s will—where a modest sum grew into a
-          major philanthropic fund over 100 years—we are planting the seeds of a
-          mycological endowment, grown from the community itself.
-        </p>
-
-        <p>
-          By collecting small donations today and investing them wisely, we aim
-          to create a fund that will fruit in a century—supporting the research
-          and resilience of future mycologists worldwide. Just as fungi form
-          sclerotia to survive hard times and germinate later, we are preparing
-          a legacy for people we will never meet.
-        </p>
-
-        <p>
-          <strong>Initial goal:</strong> Raise $5,000 at this year’s Mycological Society of America 
-          conference. After 100 years of accruing interest, this will fund ~$2.7 million dollars of research.
-        </p>
-
-        <p>
-          <strong>We ask only this:</strong> Donate what you can. Send a message. Receive a
-          sticker. Create a better future for fungal science.
-        </p>
-
-        <p class="mt-4">
-          <a
-            href="https://givebutter.com/pntxwy"
-            target="_blank"
-            class="inline-block px-6 py-3 bg-yellow-500 text-black font-semibold rounded-lg shadow hover:bg-yellow-400 transition"
-          >
-            Contribute Now
-          </a>
-        </p>
-      </div>
+      </p>
+      <p class="text-sm sm:text-base mb-6">
+        You can contact us via email at:
+        <a href="mailto:sclerotiaproject@gmail.com" class="text-blue-500 hover:underline">sclerotiaproject@gmail.com</a>
+      </p>
     </div>
 
     <!-- Footer 
