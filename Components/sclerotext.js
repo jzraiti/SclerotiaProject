@@ -2,8 +2,8 @@
 
 async function loadSclerotext() {
   const urls = [
-    "https://docs.google.com/spreadsheets/d/e/2PACX-1vSHNQiPP_MAlcN-WqsEvt_794puJkCyQ2iqeiRzthX4KKivPtIA1xNMyjHK4owc1BtI1PEjuQ28OKbJ/pub?gid=481828273&single=true&output=csv",
-    "https://docs.google.com/spreadsheets/d/e/2PACX-1vRo_kq_Yxnw226gC6YBHMnXMwaIEwwsMAUDn8V1Nmip0hBHFou6gT-tw8xFV9Vcza1LVmwEPrgRbj-u/pub?output=csv",
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vRmt2R1PLdtfnHH4BMll_SVVMlqWDCVD5t4DRUTip5M-IxZKZZJh4grebNSn_m29g/pub?output=csv",
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vSI-W_nJqMkfOx98l9Jdy7IEnwHg3E0hqdJT8NEAaZuD9ZT-cw01HggZgmqTZs2Kg/pub?output=csv",
   ];
   const container = document.getElementById("sclerotext-container");
 
@@ -13,7 +13,7 @@ async function loadSclerotext() {
 
   // First CSV: reverse for newest first, second CSV: keep order for oldest last
   const allRows = [
-    ...texts[0].trim().split("\n").slice(1).reverse(),
+    ...texts[0].trim().split("\n").slice(1),
     ...texts[1].trim().split("\n").slice(1),
   ];
 
