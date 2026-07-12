@@ -2,6 +2,7 @@
 
 async function loadSclerotext() {
   const urls = [
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vT_27pn3h1QIKgcELTHc_gdvm3Cpv8fvSuu3PF8AeM4qW9opbLRqcACvU7qrJK3jfQ8AdnCDs31poP-/pub?output=csv",
     "https://docs.google.com/spreadsheets/d/e/2PACX-1vRmt2R1PLdtfnHH4BMll_SVVMlqWDCVD5t4DRUTip5M-IxZKZZJh4grebNSn_m29g/pub?output=csv",
     "https://docs.google.com/spreadsheets/d/e/2PACX-1vSI-W_nJqMkfOx98l9Jdy7IEnwHg3E0hqdJT8NEAaZuD9ZT-cw01HggZgmqTZs2Kg/pub?output=csv",
   ];
@@ -11,10 +12,10 @@ async function loadSclerotext() {
   const responses = await Promise.all(urls.map((url) => fetch(url)));
   const texts = await Promise.all(responses.map((res) => res.text()));
 
-  // First CSV: reverse for newest first, second CSV: keep order for oldest last
   const allRows = [
     ...texts[0].trim().split("\n").slice(1),
     ...texts[1].trim().split("\n").slice(1),
+    ...texts[2].trim().split("\n").slice(1),
   ];
 
   allRows.forEach((row) => {
